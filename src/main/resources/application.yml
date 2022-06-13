@@ -6,3 +6,7 @@ spring:
     url: jdbc:oracle:thin:@workout996.icu:1521:XE
     username: c##rick
     password: rick
+
+logging:
+  level:
+    com.dhee.card.mapper: debug

@@ -116,7 +116,7 @@
                     <input type="text" class="form-control" placeholder="2010-10-21" id="timeEnd">
                 </div>
             </div>
-            <div class="col-3 bg-lemonchiffon" @click="handleClickA21"> <a class="btn btn-info btn-lg" href="#" role="button" >検索</a> </div>
+            <div class="col-3 bg-lemonchiffon" @click="handleClickA21"> <a class="btn btn-info btn-lg" role="button" >検索</a> </div>
         </div>
         <br>
         <div class="row card-header">ご決済情報照会</div>
@@ -173,7 +173,6 @@
     const app = {
         data() {
             return {
-                // items:[{seq:'1',tritim:'1',kmtnam:'1',uag:'1',bktskz:'1'}],
                 items:[]
             }
         },
@@ -195,6 +194,8 @@
                     })
                 this.items = _items
             }
+
+
         }
     }
 

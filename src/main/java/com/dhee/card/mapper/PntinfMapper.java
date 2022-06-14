@@ -1,0 +1,21 @@
+package com.dhee.card.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.dhee.card.entity.Pntinf;
+import com.dhee.card.entity.Uri;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Mapper
+@Component
+public interface PntinfMapper extends BaseMapper<Pntinf> {
+
+    @Select("select * from PNTINF where TRITIM >= TO_TIMESTAMP(#{timeBegin}, 'YYYY-MM-DD HH24:MI:SS.FF6') and TRITIM <= TO_TIMESTAMP(#{timeEnd}, 'YYYY-MM-DD HH24:MI:SS.FF6')")
+    List<Pntinf> selectByTime(@Param("timeBegin") String timeBegin, @Param("timeEnd") String timeEnd);
+
+
+}

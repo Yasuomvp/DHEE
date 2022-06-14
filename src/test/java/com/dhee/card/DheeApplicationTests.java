@@ -1,5 +1,6 @@
 package com.dhee.card;
 
+import com.dhee.card.mapper.PntinfMapper;
 import com.dhee.card.mapper.UriMapper;
 import com.dhee.card.entity.Uri;
 import com.dhee.card.service.UriService;
@@ -18,6 +19,8 @@ class DheeApplicationTests {
     private UriService uriService;
     @Autowired
     private UriMapper uriMapper;
+    @Autowired
+    private PntinfMapper pntinfMapper;
     @Test
     void contextLoads() {
         List<Uri> allUris = uriService.getAllUris();
@@ -28,6 +31,11 @@ class DheeApplicationTests {
     @Test
     void test1(){
         System.out.println(uriService.selectByTime("2000-01-02","2022-09-12"));
+    }
+
+    @Test
+    void test2(){
+        System.out.println(pntinfMapper.selectByTime("2000-01-02","2022-09-12"));
     }
 
 }

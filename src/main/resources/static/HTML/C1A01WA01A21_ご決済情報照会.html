@@ -113,7 +113,7 @@
             </div>
             <div class="col-3 bg-lemonchiffon">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="2010-10-21" id="timeEnd">
+                    <input  type="text" class="form-control" placeholder="2010-10-21" id="timeEnd">
                 </div>
             </div>
             <div class="col-3 bg-lemonchiffon" @click="handleClickA21"> <a class="btn btn-info btn-lg" role="button" >検索</a> </div>
@@ -177,20 +177,15 @@
             }
         },
         methods:{
-            //取引日期：TRITIM
-            //加盟店名：KMTNAM
-            //壳上额：UAG
-            //分割支払回：BKTSKZ
+
             handleClickA21(){
                 let _items = this.items;
                 axios.get('/uri/selectByTime',{params: {timeBegin:$("#timeBegin").val(),timeEnd:$("#timeEnd").val()}})
                     .then(function (response) {
-
                         let result = response.data
                         result.forEach(val=>{
                             _items.push(val)
                         })
-
                     })
                 this.items = _items
             }

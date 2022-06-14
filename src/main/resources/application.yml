@@ -7,6 +7,8 @@ spring:
     username: c##rick
     password: rick
 
+
+
 logging:
   level:
-    com.dhee.card.mapper: debug
+    sql: debug
